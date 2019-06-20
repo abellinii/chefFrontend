@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "./static/media/chef.55723299.jpg"
   },
   {
-    "revision": "7655d84c6da1375538f1",
-    "url": "./static/js/main.80412edd.chunk.js"
+    "revision": "83dc6be88cd7eb33937b",
+    "url": "./static/js/main.0adc397a.chunk.js"
   },
   {
     "revision": "e6ea10976c65e41aac007c011a97cbd4",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "./static/css/2.e69557a5.chunk.css"
   },
   {
-    "revision": "9ae34363f4cced2b7c0ae981fe973b27",
+    "revision": "49d81c9fe3cf8355f7cc6f0583138727",
     "url": "./index.html"
   }
 ];

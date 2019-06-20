@@ -51,10 +51,7 @@ class Auth {
   }
 
   signIn() {
-    this.auth0.authorize({audience: 'https://abellinii.au.auth0.com/userinfo',
-      redirectUri: REDIRECTURI,
-      responseType: 'token id_token',
-      scope: 'openid profile'});
+    this.auth0.authorize();
 
   }
 
