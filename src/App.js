@@ -11,7 +11,7 @@ import Callback from './Callback/Callback'
 import axios from "axios";
 import auth0Client from './Auth';
 import { withRouter, Route } from "react-router-dom";
-var ENDPOINT= process.env.REACT_APP_REDIRECTURI
+var ENDPOINT= process.env.REACT_APP_URL_ENDPOINT
 
 
 
