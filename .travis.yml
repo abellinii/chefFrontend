@@ -11,6 +11,7 @@ deploy:
   access_key_id: $ACCESS_KEY_ID
   secret_access_key: $SECRET_ACCESS_KEY_ID
   bucket: "chefcontinous"
+  region: us-west-2
   skip_cleanup: true
   local_dir: build
 
