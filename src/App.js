@@ -98,8 +98,7 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
       if(user === null || user === undefined){
         return false
       }else{
-        console.log(process.env.URL_ENDPOINT)
-console.log(ENDPOINT + "/api/getUserInfo/" + user)
+
        fetch(ENDPOINT + "/api/getUserInfo/" + user)
             .then(data => data.json())
             .then((res) => {
