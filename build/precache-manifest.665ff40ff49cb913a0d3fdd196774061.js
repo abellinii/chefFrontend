@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "./static/media/chef.55723299.jpg"
   },
   {
-    "revision": "39062bd97e62fce1bdfd",
-    "url": "./static/js/main.2568942b.chunk.js"
+    "revision": "7655d84c6da1375538f1",
+    "url": "./static/js/main.80412edd.chunk.js"
   },
   {
     "revision": "e6ea10976c65e41aac007c011a97cbd4",
@@ -40,15 +40,15 @@ self.__precacheManifest = [
     "url": "./static/media/knifeandfork.64c44188.png"
   },
   {
-    "revision": "ed8c94e2c829c3b85a3a",
-    "url": "./static/js/2.f6477c20.chunk.js"
+    "revision": "b37524156fa7b9faf26f",
+    "url": "./static/js/2.46cf8ba9.chunk.js"
   },
   {
-    "revision": "ed8c94e2c829c3b85a3a",
+    "revision": "b37524156fa7b9faf26f",
     "url": "./static/css/2.e69557a5.chunk.css"
   },
   {
-    "revision": "7d8b73abd53db7916971fcd9326fcc56",
+    "revision": "9ae34363f4cced2b7c0ae981fe973b27",
     "url": "./index.html"
   }
 ];

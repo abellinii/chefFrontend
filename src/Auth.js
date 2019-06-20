@@ -2,6 +2,11 @@
 
 import auth0 from 'auth0-js';
 
+var REDIRECTURI=process.env.REACT_APP_REDIRECTURI;
+
+
+
+
 class Auth {
   constructor() {
 
@@ -11,7 +16,7 @@ class Auth {
       domain: 'abellinii.au.auth0.com',
       audience: 'https://abellinii.au.auth0.com/userinfo',
       clientID: 'K0mowQGaScTM4gThu3hNiYFrv1mlKzd0',
-      redirectUri: 'https://www.chefistant.com/#callback',
+      redirectUri: REDIRECTURI,
       responseType: 'token id_token',
       scope: 'openid profile',
     });
@@ -47,7 +52,7 @@ class Auth {
 
   signIn() {
     this.auth0.authorize({audience: 'https://abellinii.au.auth0.com/userinfo',
-      redirectUri: 'https://www.chefistant.com/#callback',
+      redirectUri: REDIRECTURI,
       responseType: 'token id_token',
       scope: 'openid profile'});
 

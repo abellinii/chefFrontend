@@ -56,6 +56,7 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
     try {
       await auth0Client.silentAuth().then(()=>{
           result = auth0Client.getID();
+          console.log(result)
       })
            
       this.forceUpdate();
