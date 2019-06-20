@@ -2,7 +2,9 @@ sudo: required
 language: node_js
 node_js:
   - "10.15.3"
-
+script:
+  - unset CI
+  - npm run build
 
 deploy:
   provider: s3
