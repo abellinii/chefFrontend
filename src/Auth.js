@@ -12,7 +12,7 @@ class Auth {
       audience: 'https://abellinii.au.auth0.com/userinfo',
       clientID: 'K0mowQGaScTM4gThu3hNiYFrv1mlKzd0',
       redirectUri: 'https://www.chefistant.com/#callback',
-      responseType: 'id_token',
+      responseType: 'token id_token',
       scope: 'openid profile',
     });
 
