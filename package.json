@@ -9,7 +9,6 @@
     "build": "react-scripts build",
     "deploy": "aws s3 sync build/ s3://chefcontinous"
   },
-  "browserslist": [],
   "homepage": ".",
   "keywords": [],
   "author": "",
@@ -22,7 +21,6 @@
     "auth-js": "0.0.16",
     "auth0-js": "^9.10.4",
     "axios": "^0.18.1",
-    "browserslist": "^4.6.3",
     "concurrently": "^4.1.0",
     "date-fns": "^2.0.0-alpha.34",
     "express-jwt": "^5.3.1",

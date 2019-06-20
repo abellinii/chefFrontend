@@ -40,15 +40,15 @@ self.__precacheManifest = [
     "url": "./static/media/knifeandfork.64c44188.png"
   },
   {
-    "revision": "ed9b2709ccde8e9fd28c",
+    "revision": "ed8c94e2c829c3b85a3a",
     "url": "./static/js/2.f6477c20.chunk.js"
   },
   {
-    "revision": "ed9b2709ccde8e9fd28c",
-    "url": "./static/css/2.6d3f189f.chunk.css"
+    "revision": "ed8c94e2c829c3b85a3a",
+    "url": "./static/css/2.e69557a5.chunk.css"
   },
   {
-    "revision": "dfa2b3e9b3b3d1cdf1b6b154b5928822",
+    "revision": "7d8b73abd53db7916971fcd9326fcc56",
     "url": "./index.html"
   }
 ];
