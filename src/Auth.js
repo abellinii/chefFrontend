@@ -46,7 +46,10 @@ class Auth {
   }
 
   signIn() {
-    this.auth0.authorize();
+    this.auth0.authorize({audience: 'https://abellinii.au.auth0.com/userinfo',
+      redirectUri: 'https://www.chefistant.com/#callback',
+      responseType: 'token id_token',
+      scope: 'openid profile'});
 
   }
 
