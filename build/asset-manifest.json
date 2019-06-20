@@ -1,0 +1,21 @@
+{
+  "main.js": "./static/js/main.2568942b.chunk.js",
+  "main.js.map": "./static/js/main.2568942b.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+  "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+  "static/css/2.6d3f189f.chunk.css": "./static/css/2.6d3f189f.chunk.css",
+  "static/js/2.f6477c20.chunk.js": "./static/js/2.f6477c20.chunk.js",
+  "static/js/2.f6477c20.chunk.js.map": "./static/js/2.f6477c20.chunk.js.map",
+  "index.html": "./index.html",
+  "precache-manifest.e86b291484195535cd8965cba960a2be.js": "./precache-manifest.e86b291484195535cd8965cba960a2be.js",
+  "service-worker.js": "./service-worker.js",
+  "static/css/2.6d3f189f.chunk.css.map": "./static/css/2.6d3f189f.chunk.css.map",
+  "static/media/bottom.jpg": "./static/media/bottom.a197f0f6.jpg",
+  "static/media/chef.jpg": "./static/media/chef.55723299.jpg",
+  "static/media/color.jpg": "./static/media/color.ea2a5f63.jpg",
+  "static/media/knifeandfork.png": "./static/media/knifeandfork.64c44188.png",
+  "static/media/loading.svg": "./static/media/loading.c5590569.svg",
+  "static/media/meal.jpg": "./static/media/meal.02d010d1.jpg",
+  "static/media/meal.gif": "./static/media/meal.f0f73633.gif",
+  "static/media/tweet.svg": "./static/media/tweet.e6ea1097.svg"
+}
