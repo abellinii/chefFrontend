@@ -47,3 +47,4 @@ render(
 	</BrowserRouter>
   ,document.getElementById('react-target'));
 
+serviceWorker.unregister();
