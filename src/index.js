@@ -5,7 +5,7 @@ import { BrowserRouter } from  'react-router-dom';
 import { render } from 'react-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-
+serviceWorker.unregister();
 const theme =  createMuiTheme({
    palette: {
     primary: {main:'#000000'} ,
@@ -47,4 +47,3 @@ render(
 	</BrowserRouter>
   ,document.getElementById('react-target'));
 
-serviceWorker.unregister();
