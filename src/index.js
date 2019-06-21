@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from  'react-router-dom';
+import { HashRouter } from  'react-router-dom';
 import { render } from 'react-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -40,11 +40,11 @@ function Root() {
 render( 
 
  
-<BrowserRouter >
+<HashRouter >
 
 	<Root />
 
-	</BrowserRouter>
+	</HashRouter>
   ,document.getElementById('react-target'));
 
 serviceWorker.unregister();
