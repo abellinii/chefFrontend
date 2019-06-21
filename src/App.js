@@ -20,7 +20,7 @@ var ENDPOINT= process.env.REACT_APP_URL_ENDPOINT
 
 
 
-
+console.log(ENDPOINT);
 class App extends React.Component{
   // initialize our state 
 
@@ -180,7 +180,7 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
                           </div>
                               
                         <main>  
-                         <Route  path="/" 
+                         <Route  exact path="/" 
                            render={({ match }) => { return this.state.newUser   ?  <Checkout id={this.state.userId}/> :  <Home/>}}/> 
                          <Route path="/login" component={Login} />
                          <Route path="/interface" render={(props)=> <Interface {...props} />} />
