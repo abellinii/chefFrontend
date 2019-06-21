@@ -180,12 +180,12 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
                           </div>
                               
                         <main>  
-                         <Route  exact path="/" 
+                         <Route exact path="/" 
                            render={({ match }) => { return this.state.newUser   ?  <Checkout id={this.state.userId}/> :  <Home/>}}/> 
                          <Route path="/login" component={Login} />
                          <Route path="/interface" render={(props)=> <Interface {...props} />} />
                          <Route path="/planyourweek:date?/" component={WeekPlanner} />
-                         
+                         <Route exact path='/callback' component={Callback}/>
                         </main>
                   
                          <div >

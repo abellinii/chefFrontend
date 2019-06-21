@@ -16,7 +16,7 @@ class Auth {
       domain: 'abellinii.au.auth0.com',
       audience: 'https://abellinii.au.auth0.com/userinfo',
       clientID: 'K0mowQGaScTM4gThu3hNiYFrv1mlKzd0',
-      redirectUri: REDIRECTURI,
+      redirectUri: 'https://www.chefistant.com/#callback',
       responseType: 'id_token',
       scope: 'openid profile',
     });
@@ -52,7 +52,7 @@ class Auth {
 
   signIn() {
     this.auth0.authorize({audience: 'https://abellinii.au.auth0.com/userinfo',
-      redirectUri: REDIRECTURI,
+      redirectUri: 'https://www.chefistant.com/#callback',
       clientID: 'K0mowQGaScTM4gThu3hNiYFrv1mlKzd0',
       responseType: 'id_token',
       scope: 'openid profile'});
