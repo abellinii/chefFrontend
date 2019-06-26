@@ -20,33 +20,55 @@ import { getRecipes } from './userDataParsing';
 import { WEEK, MEAL } from './userDataParsing';
 import FormControl from '@material-ui/core/FormControl';
 import Chip from '@material-ui/core/Chip';
-var ENDPOINT= process.env.URL_ENDPOINT;
+import Hidden from '@material-ui/core/Hidden';
+
+
+var ENDPOINT= 'https://api.chefistant.com';
 
 
 
 const styles = {
   root:{
-      width:'100%',
+      width:'100vw',
       backgroudColor:'black',
+      overflow:"hidden"
   },
   title:{
       textAlign:'center',
       backgroundColor:'#fef9e6'
   },  
   topMarge:{ 
+    marginTop:"0.5%",
       display:'inline-block',
       width:"100vw",
       height:'100%'
-  },
+  }, 
+    topMargeItem:{ 
+    marginTop:"0.5%",
+    marginLeft:"3%",
+      display:'inline-block',
+      width:"100vw",
+      height:'100%'
+  }, 
   marge:{
-      marginLeft:"1%",
+    textAlign:'center',
+    alignContent:'center',
+      display:"inline-block",
+      marginLeft:"3%",
       marginRight:"1%",
       marginTop:'1%',
-      display:'inline-block',
       width:"100%",
       height:'100%'
   },
-  ask:{paddingLeft:'7%',
+    recipes:{
+      textAlign:'center',
+      alignContent:'center',
+      display:"inline-block",
+      marginTop:'1%',
+      width:"100%",
+      height:'100%'
+  },
+  ask:{paddingLeft:'3%',
       fontSize:'1.2rem'},
       but:{
       height:'100%',
@@ -58,19 +80,20 @@ const styles = {
    chip: {
       margin: '0.5%',
   },
-  recipes:{
-      display:'flex',
-      width:'100%',
-      height:'25%',
-},
 buttons:{
       justifyContent: 'space-evenly',
       alignContent: 'space-evenly',
-      paddingLeft:'1%',
-      width:'100%'
+      paddingLeft:'10%',
+      paddingRight:'10%',
+      width:'95%',
+      marginTop:'5%',
+      marginBottom:'5%',
 },
 alert:{    
      float:'right'     
+},
+selectWidth:{
+  width:"100%"
 },
 main:{
   borderTop:"1px solid black",
@@ -662,11 +685,11 @@ setRecipePicked(day,meal){
          
 
          {/*DatepicKer and meal checklist*/}
-      <Grid container >
+      <Grid container className="topMargeXS">
 
-      <Grid className={classes.topMarge} item  xs={3}>
+      <Grid className="topMargeXS" item  xs={6} md={3}>
 
-                            <DatePickers handleDateChange={this.handleDateChange} selectedWeek={this.state.selectedWeek} />             
+                            <DatePickers className="datePicker" handleDateChange={this.handleDateChange} selectedWeek={this.state.selectedWeek} />             
       
       </Grid>
 
@@ -674,10 +697,10 @@ setRecipePicked(day,meal){
 
 
 
+     
+ <Grid container xs={12} md={9} className="topMargeXS" >
 
-
-
-      <Grid className={classes.topMarge}item  xs={3}>
+      <Grid className={classes.topMarge}item  xs={4}>
 
              <p>Breakfast</p>        <Checkbox
           checked={this.state.checkedB}
@@ -690,7 +713,7 @@ setRecipePicked(day,meal){
       </Grid>
 
 
-      <Grid className={classes.topMarge}item  xs={3}>
+      <Grid className={classes.topMarge}item  xs={4}>
 
               <p>Lunch</p>         <Checkbox
           checked={this.state.checkedL}
@@ -703,7 +726,7 @@ setRecipePicked(day,meal){
       </Grid>
 
 
-      <Grid className={classes.topMarge}item  xs={3}>
+      <Grid className={classes.topMarge}item  xs={4}>
 
               <p>Dinner</p>        <Checkbox
           checked={this.state.checkedD}
@@ -715,7 +738,7 @@ setRecipePicked(day,meal){
       </Grid>
 
       </Grid>
-
+      </Grid>
 
       <Grid className={classes.marge}item  xs={12}>
               <Divider/>
@@ -729,15 +752,15 @@ setRecipePicked(day,meal){
 
 
         {/*What do you feel like*/}
-           <Grid className={classes.topMarge}container  >
+           <Grid className={classes.topMarge} spacing={16} container  >
 
-                            <Grid className={classes.topMarge}item  xs={3}>
+                            <Grid className={classes.topMarge}item  xs={12} md={3}>
                             <FormControl variant="outlined" className={classes.root}>
                             <p className={classes.ask}>Do You feel like any foods?</p>    
                              </FormControl>
                             </Grid>  
-                            <Grid className={classes.topMarge}item  xs={2}>
-                            <FormControl variant="outlined" className={classes.root}>
+                            <Grid className={classes.topMargeItem}item  xs={6} md={2}>
+                            <FormControl variant="outlined" className={classes.selectWidth}>
                             <InputLabel
                             ref={ref => {
                             this.InputLabelRef = ref;
@@ -766,7 +789,7 @@ setRecipePicked(day,meal){
                             </Select>
                             </FormControl>
                             </Grid>
-                            <Grid className={classes.marge}item  xs={1}>
+                            <Grid className={classes.marge}item  xs={4} md={1}>
                             <FormControl variant="outlined" className={classes.but} >
                             <Button onClick={()=>this.clickIt(1)} value="Food" variant="outlined" size="large"  >
                             ADD
@@ -774,7 +797,7 @@ setRecipePicked(day,meal){
                              </FormControl>
                             </Grid>
                              
-                             <Grid className={classes.marge} item xs={5}>
+                             <Grid className={classes.marge} item xs={12} md={5}>
                              <FormControl variant="outlined" className={classes.marge} >
                              
                                {this.state.foodData.map((data)=>{
@@ -805,13 +828,13 @@ setRecipePicked(day,meal){
         
 
                             <Grid className={classes.topMarge}container  spacing={16} >
-                            <Grid className={classes.topMarge}item  xs={3}>
+                            <Grid className={classes.topMarge}item xs={12} md={3}>
                              <FormControl variant="outlined" className={classes.root}>
                             <p className={classes.ask} >Or are there any foods you do not feel like?</p> 
                             </FormControl>    
                             </Grid>
-                            <Grid className={classes.topMarge}item  xs={2}>
-                            <FormControl variant="outlined" className={classes.root}>
+                            <Grid className={classes.topMargeItem}item  xs={6} md={2}>
+                            <FormControl variant="outlined" className={classes.selectWidth}>
                             <InputLabel
                             ref={ref => {
                             this.InputLabelRef = ref;
@@ -839,14 +862,14 @@ setRecipePicked(day,meal){
                             </Select>
                             </FormControl>
                             </Grid>
-                            <Grid className={classes.marge}item  xs={1}>
+                            <Grid className={classes.marge} item  xs={4} md={1}>
                              <FormControl variant="outlined" className={classes.but} >
                             <Button onClick={this.clickIt.bind(this)} variant="outlined" size="large"  >
                             ADD
                             </Button>
                             </FormControl>
                             </Grid>
-                              <Grid className={classes.marge} item xs={5}>
+                              <Grid className={classes.marge} item xs={12} md={5}>
                              <FormControl variant="outlined" className={classes.marge} >
                                 {this.state.unlikedFoodData.map((data)=>{
                                     return  (
@@ -878,8 +901,8 @@ setRecipePicked(day,meal){
 
 {/*recipe picker*/}
 
-        <Grid className={classes.marge}container >
-        <Grid className={classes.recipes}container >
+        <Grid className={classes.recipes} container >
+        
 
 
 
@@ -887,34 +910,36 @@ setRecipePicked(day,meal){
 
 {/*Show buttons to get new recipes depending on stage in the process*/}
 
-        </Grid>
+      
+        
 {!this.state.showApiRecipes ?
               <Grid className={classes.alert} item  xs={12}>
               <AlertDialogSlide {...this.state} title='GET RECIPES' getRecipes={this.showRecipes}/>
               </Grid>
 : this.state.recipesCalled !== "" &&
-              <Grid  className={classes.recipes} item  xs={12}>
-              <Grid className={classes.recipes} item  xs={11}>
+
+              <Grid  className="recipes" item  xs={12}>
+              <Grid className="recipes" item  xs={12} md={11}>
               <ApiRecipes resetMeals={this.getWeekMeal} week={this.state.selectedWeek}addRecipe ={this.addRecipeToWeek}tileData ={this.state.recipesCalled} />
               </Grid>
               
-             <Grid className={classes.buttons} container  xs={1}>
-              <Grid  item  xs={12}>
+             <Grid className="recipes" container  xs={12} md={1}>
+             
 
-               <AlertDialogSlide className={classes.buttons} {...this.state} title='CHANGE OPTIONS' getRecipes={this.getRecipes}/>
-              </Grid>
-            <Grid  item  xs={12}>
-          <div>
-              <Button  className={classes.buttons} variant="outlined" color="primary" onClick={this.getMoreRecipes}>SHOW MORE</Button>
-              </div>
-          </Grid>
+               <AlertDialogSlide className="buttons" {...this.state} title='CHANGE OPTIONS' getRecipes={this.getRecipes}/>
+              
+              <Grid  className="alignsButs"  item  xs={6} md={12}>
+            
+                <Button  className="buttons" variant="outlined" color="primary" onClick={this.getMoreRecipes}>SHOW MORE</Button>
+                
+            </Grid>
               </Grid>              </Grid> 
-                   
+                 
           
 }
 
-        </Grid>
-
+       
+  </Grid>
         <Grid className={classes.marge}item  xs={12}>
                 <Divider/>
         </Grid> 
@@ -929,29 +954,35 @@ setRecipePicked(day,meal){
 
         <Grid container className={classes.main} >
         
-              <Grid item  xs={2}>
+              <Grid item  xs={12} md={2}>
              <WeekTracker  planArray={this.state.planArray} handleChoice={this.setRecipePicked}/>
          
              </Grid>
             {this.state.selectedWeek === "" ?
-               <Grid item  className={classes.chosenRecipes}xs={10}>
+            <Hidden smDown >
+               <Grid item  className={classes.chosenRecipes}xs={0} md={10}>
                 <img src={require("./img/meal.gif") }alt="gif" width='100%' />
                </Grid> 
+               </Hidden>
          :
-              <Grid item  className={classes.chosenRecipes}xs={10}>
+              <Hidden smDown >
+              <Grid item  className={classes.chosenRecipes}xs={0} md={10}>
              <ChosenRecipes recipePrototype={this.state.currentWeekGroceries}/>
-         
-             </Grid> 
+             </Grid>
+            </Hidden> 
            }
 
         </Grid>  :   
+
                        <Grid container className={classes.main}  >
-                       <Grid item  xs={2}>
+                       <Grid item  xs={12} md={2}>
                        <WeekTracker  planArray={this.state.planArray} handleChoice={this.setRecipePicked}/>
                        </Grid>
-                       <Grid item  className={classes.chosenRecipes}xs={10}>
+                       <Hidden smDown >
+                       <Grid item  className={classes.chosenRecipes}xs={0} md={10}>
                       <img src={require("./img/meal.gif") }alt="gif" width='100%' />
                      </Grid> 
+                      </Hidden>
                     </Grid> }
 
         

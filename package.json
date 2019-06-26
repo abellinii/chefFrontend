@@ -48,5 +48,11 @@
     "underscore": "^1.9.1",
     "unirest": "^0.6.0",
     "wordnet-db": "^3.1.11"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

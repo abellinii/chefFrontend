@@ -5,6 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
+import Grid from '@material-ui/core/Grid';
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
@@ -47,8 +48,8 @@ this.handleClose();
   render() {
     
     return (
-      <div >
-        <Button width='100%' variant="outlined" color="primary" onClick={this.handleClickOpen}>
+      <Grid  item className="alignsButs" xs={6} md={12}>
+        <Button className="buttons" width='100%' variant="outlined" color="primary" onClick={this.handleClickOpen}>
           {this.props.title}
         </Button>
         <Dialog
@@ -107,7 +108,7 @@ this.handleClose();
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+      </Grid>
     );
   }
 }

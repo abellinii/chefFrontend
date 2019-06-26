@@ -8,7 +8,7 @@ import 'react-day-picker/lib/style.css';
 const styles = {
   grid: {
     display:'block',
-    paddingLeft:"9%"
+    
 
   },
 };
