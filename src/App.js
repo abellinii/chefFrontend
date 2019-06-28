@@ -11,7 +11,7 @@ import Callback from './Callback/Callback'
 import axios from "axios";
 import auth0Client from './Auth';
 import { withRouter, Route } from "react-router-dom";
-var ENDPOINT= process.env.REACT_APP_URL_ENDPOINT
+var ENDPOINT= 'api.chefistant.com'
 
 
 
@@ -104,7 +104,7 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
             .then((res) => {
             if(res.data){
               //If data found not a new user
-            
+
               this.setState({
                 newUser:false
               })

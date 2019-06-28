@@ -23,7 +23,7 @@ import Chip from '@material-ui/core/Chip';
 import Hidden from '@material-ui/core/Hidden';
 
 
-var ENDPOINT= 'https://api.chefistant.com';
+var ENDPOINT= 'api.chefistant.com';
 
 
 
@@ -363,7 +363,7 @@ chosenRecipes:{
 
   
     //Call add user with info
-    axios.post("http://localhost:3001/api/addWeekToUser", {
+    axios.post(ENDPOINT + "/api/addWeekToUser", {
       id: idToUpdate,
       update: update 
     });
@@ -380,7 +380,7 @@ chosenRecipes:{
           }
           //Call API and grab week
           if(this.state.userId != null){
-          fetch("http://localhost:3001/api/getWeekMeal/" + date + "/" + this.state.userId)
+          fetch(ENDPOINT + "/api/getWeekMeal/" + date + "/" + this.state.userId)
           .then(data => data.json())
           .then(res => {
                   //If data is there extract with getRecipe and store in state(currentWeekGroceries)

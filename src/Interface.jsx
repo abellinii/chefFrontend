@@ -11,7 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import axios from "axios";
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom'
-var ENDPOINT= process.env.URL_ENDPOINT;
+var ENDPOINT= 'api.chefistant.com';
 
 
 
@@ -278,7 +278,7 @@ getUserInfo(){
 
 getWeekMeal(weekId){
 console.log(ENDPOINT + "/api/getWeekMeal/" + weekId + "/" + this.props.userId)
-fetch("http://localhost:3001/api/getWeekMeal/" + weekId + "/" + this.props.userId )
+fetch(ENDPOINT + "/api/getWeekMeal/" + weekId + "/" + this.props.userId )
     .then(data => data.json())
       .then(res => {
         var newData =res.data && res.data.weeks[0].weeksRecipes
