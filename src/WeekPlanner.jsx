@@ -658,7 +658,11 @@ setRecipePicked(day,meal){
       
     }
 
+    componentWillReceiveProps(nextProps){
+    this.setState({userId:nextProps.userId})
+    this.getWeekMeal(this.state.selectedWeek)
 
+    }
 
 
 
