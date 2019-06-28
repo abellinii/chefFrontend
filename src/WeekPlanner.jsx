@@ -161,7 +161,6 @@ chosenRecipes:{
     this.getRecipes = this.getRecipes.bind(this)
     this.showRecipes = this.showRecipes.bind(this)
     this.getMoreRecipes = this.getMoreRecipes.bind(this)
-    this.addUserToState =this.addUserToState.bind(this)
     this.addRecipeToWeek = this.addRecipeToWeek.bind(this)
     this.setWeekTracker = this.setWeekTracker.bind(this)
 }
