@@ -199,7 +199,7 @@ chosenRecipes:{
 
 
       getUserInfo(user){
-          fetch(ENDPOINT + "/api/getUserInfo/" + user)
+          fetch(ENDPOINT + "/api/getUserinfo/" + user)
             .then(data => data.json())
             .then((res) => {
               this.setState({ user:res.data})})
