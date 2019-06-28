@@ -98,12 +98,13 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
       if(user === null || user === undefined){
         return false
       }else{
-
+       console.log(ENDPOINT + "/api/getUserinfo/" + user)
        fetch(ENDPOINT + "/api/getUserinfo/" + user)
             .then(data => data.json())
             .then((res) => {
             if(res.data){
               //If data found not a new user
+            
               this.setState({
                 newUser:false
               })
@@ -118,6 +119,7 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
 
           }
           }
+
 
 
 

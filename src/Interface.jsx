@@ -277,7 +277,7 @@ getUserInfo(){
 
 
 getWeekMeal(weekId){
-console.log("http://localhost:3001/api/getWeekMeal/" + weekId + "/" + this.props.userId)
+console.log(ENDPOINT + "/api/getWeekMeal/" + weekId + "/" + this.props.userId)
 fetch("http://localhost:3001/api/getWeekMeal/" + weekId + "/" + this.props.userId )
     .then(data => data.json())
       .then(res => {
