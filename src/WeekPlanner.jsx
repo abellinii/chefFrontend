@@ -173,30 +173,6 @@ chosenRecipes:{
 
 
 
-      componentDidMount() {
-          this.addUserToState();
-          
-       }
-        
-
-
-      //Get logged in users ID (set with timer but need to find a better way to do this)
-      addUserToState(){
-      setTimeout(()=>{
-  
-            var user = auth0Client.getProfile();
-            this.setState({
-            userId:user.sub,
-            user:this.getUserInfo(user.sub)
-            })
-            this.getWeekMeal();
-            
-       
-            return user.sub;
-      }, 5000)
-      }
-
-
 
       getUserInfo(user){
           fetch(ENDPOINT + "/api/getUserinfo/" + user)
