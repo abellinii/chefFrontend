@@ -39,7 +39,8 @@ html, body {
       padding-left: 10%,
       padding-right:10%;
       margin:auto !important;
-      margin-top: 5%;
+      padding-top: 0.75%;
+      padding-bottom:0.25%;
 }
 
 .alignsButs{

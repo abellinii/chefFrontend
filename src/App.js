@@ -56,19 +56,18 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
     try {
       await auth0Client.silentAuth().then(()=>{
           result = auth0Client.getID();
-          console.log(result)
       })
            
       this.forceUpdate();
       this.setState({
         userId:result
       })
-      console.log(this.state.userId)
+      console.log(result);
      this.getUserInfo(this.state.userId)
-
+    
     } catch (err) {
       result = auth0Client.getID() ;
-      console.log("nouser")
+    
      
       this.setState({
         userId:result
@@ -76,6 +75,7 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
 
       this.getUserInfo(this.state.userId)
     }
+
   }
 
 
@@ -99,7 +99,7 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
         return false
       }else{
 
-       fetch(ENDPOINT + "/api/getUserInfo/" + user)
+       fetch(ENDPOINT + "/api/getUserinfo/" + user)
             .then(data => data.json())
             .then((res) => {
             if(res.data){
@@ -179,12 +179,12 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
                             <NavBar />
                           </div>
                               
-                        <main>  
+                       <main>  
                          <Route exact path="/" 
-                           render={({ match }) => { return this.state.newUser   ?  <Checkout id={this.state.userId}/> :  <Home/>}}/> 
+                           render={({ match }) => { return  this.state.newUser   ?  <Checkout id={this.state.userId}/> :  <Home/>}}/> 
                          <Route path="/login" component={Login} />
-                         <Route path="/interface" render={(props)=> <Interface {...props} />} />
-                         <Route path="/planyourweek:date?/" component={WeekPlanner} />
+                         <Route path="/interface" render={(props)=> <Interface userId={this.state.userId} {...props} />} />
+                         <Route path="/planyourweek:date?/" render={(props)=>  <WeekPlanner userId={this.state.userId} {...props} /> } />
                          <Route exact path='/callback' component={Callback}/>
                         </main>
                   

@@ -170,9 +170,10 @@ var dateSetter =0;
    constructor(props){
     super(props);
   
+  
     this.state ={
          
-         
+                userId:null,
                 weeks:[<i className="material-icons ">keyboard_arrow_left</i>,setLastWeek('DD-MM'), setWeek('DD-MM'), setNextWeek('DD-MM'),<i className="material-icons  ">keyboard_arrow_right</i>],   
                 foodTypes:["Dairy","Meat","Vegetables","Legumes","Wheat"],
                 mealName:'Meal Plan',
@@ -276,8 +277,8 @@ getUserInfo(){
 
 
 getWeekMeal(weekId){
-
-fetch(ENDPOINT + "/api/getWeekMeal/" + weekId)
+console.log("http://localhost:3001/api/getWeekMeal/" + weekId + "/" + this.props.userId)
+fetch("http://localhost:3001/api/getWeekMeal/" + weekId + "/" + this.props.userId )
     .then(data => data.json())
       .then(res => {
         var newData =res.data && res.data.weeks[0].weeksRecipes
@@ -320,7 +321,11 @@ axios.post(ENDPOINT + "/api/putUserData",{data:userData})
 
 
 
+componentWillReceiveProps(nextProps){
+this.setState({userId:nextProps.userId})
+this.getWeekMeal(this.state.thisWeek)
 
+}
 
 
 

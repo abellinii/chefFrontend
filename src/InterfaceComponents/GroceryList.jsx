@@ -33,11 +33,18 @@ const styles = theme => ({
 var list =[]
 
 class GroceryList extends React.Component {
-  state = {
+  
+
+   constructor(props){
+    super(props);
+
+  this.state = {
     checked: [0],
     groceries:this.getList(this.props.currentWeekGroceries),
     list: null,
   };
+
+}
 
   handleToggle = value => () => {
     const { checked } = this.state;
@@ -54,7 +61,8 @@ class GroceryList extends React.Component {
     this.setState({
       checked: newChecked,
     });
-  };
+  
+  }
 
 
 
@@ -210,6 +218,7 @@ convert(Mt){
     );
   }
 }
+
 
 GroceryList.propTypes = {
   classes: PropTypes.object.isRequired,

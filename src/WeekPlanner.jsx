@@ -379,15 +379,17 @@ chosenRecipes:{
           date = "00000000"
           }
           //Call API and grab week
-          fetch(ENDPOINT + "/api/getWeekMeal/" + date)
+          if(this.state.userId != null){
+          fetch("http://localhost:3001/api/getWeekMeal/" + date + "/" + this.state.userId)
           .then(data => data.json())
           .then(res => {
                   //If data is there extract with getRecipe and store in state(currentWeekGroceries)
+                  console.log(res)
                   if(res.data){
                       var newData =  res.data && res.data.weeks[0].weeksRecipes
-
+                      console.log(newData)
                       this.setWeekTracker(newData);
-                      console.log("open")
+                      
                       this.setState({
                       currentWeekGroceries:getRecipes(newData)
                       })
@@ -397,6 +399,7 @@ chosenRecipes:{
                         
                   }
           })
+        }
     }
 
   
@@ -644,7 +647,7 @@ setRecipePicked(day,meal){
 
     componentWillMount(){
       this.getFoodDataFromDb();
-      console.log(this.props)
+     this.getWeekMeal(this.state.selectedWeek);
     
 
      if(this.props.match.params.date){
@@ -918,7 +921,7 @@ setRecipePicked(day,meal){
               </Grid>
 : this.state.recipesCalled !== "" &&
 
-              <Grid  className="recipes" item  xs={12}>
+              <Grid  className="recipes" item spacing={34} xs={12}>
               <Grid className="recipes" item  xs={12} md={11}>
               <ApiRecipes resetMeals={this.getWeekMeal} week={this.state.selectedWeek}addRecipe ={this.addRecipeToWeek}tileData ={this.state.recipesCalled} />
               </Grid>
