@@ -23,7 +23,7 @@ import Chip from '@material-ui/core/Chip';
 import Hidden from '@material-ui/core/Hidden';
 
 
-var ENDPOINT= 'api.chefistant.com';
+var ENDPOINT= 'http://api.chefistant.com';
 
 
 

@@ -11,7 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import axios from "axios";
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom'
-var ENDPOINT= 'api.chefistant.com';
+var ENDPOINT= 'http://api.chefistant.com';
 
 
 

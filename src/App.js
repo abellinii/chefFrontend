@@ -11,7 +11,7 @@ import Callback from './Callback/Callback'
 import axios from "axios";
 import auth0Client from './Auth';
 import { withRouter, Route } from "react-router-dom";
-var ENDPOINT= 'api.chefistant.com'
+var ENDPOINT= 'http://api.chefistant.com'
 
 
 
