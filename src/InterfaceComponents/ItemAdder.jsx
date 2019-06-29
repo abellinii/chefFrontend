@@ -70,7 +70,7 @@ class ItemAdder extends React.Component {
             selection:"",
             addSelection:"types",
             condition:null,
-            user:{} 
+            user:{} ,
             userId:null,
           }
 
