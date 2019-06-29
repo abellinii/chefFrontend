@@ -349,6 +349,7 @@ chosenRecipes:{
 
 
     getWeekMeal(date){
+          console.log(date);
           //Check if date is supplied
           if(date === undefined){
           date = "00000000"
@@ -629,10 +630,19 @@ setRecipePicked(day,meal){
         selectedWeek:this.props.match.params.date
       })
      }
+      console.log("mounting")
+      this.getFoodDataFromDb();
+      this.getWeekMeal(this.state.selectedWeek);
       
     }
 
    componentDidMount(){
+    if(this.props.match.params.date){
+      this.setState({
+        selectedWeek:this.props.match.params.date
+      })
+     }
+     console.log("mounted")
       this.getFoodDataFromDb();
       this.getWeekMeal(this.state.selectedWeek);
 }
