@@ -143,7 +143,7 @@ chosenRecipes:{
           showApiRecipes:false,
           recipesCalled:"",
           offset:0,
-          userId:'',
+          userId:null,
           data:'',
           labelWidth:1
       }
@@ -349,14 +349,14 @@ chosenRecipes:{
 
 
     getWeekMeal(date){
-          console.log(ENDPOINT + "/api/getWeekMeal/" + date + "/" + this.state.userId);
+          console.log(ENDPOINT + "/api/getWeekMeal/" + date + "/" + this.props.userId);
           //Check if date is supplied
           if(date === undefined){
           date = "00000000"
           }
           //Call API and grab week
           if(this.state.userId != null){
-          fetch(ENDPOINT + "/api/getWeekMeal/" + date + "/" + this.state.userId)
+          fetch(ENDPOINT + "/api/getWeekMeal/" + date + "/" + this.props.userId)
           .then(data => data.json())
           .then(res => {
                   //If data is there extract with getRecipe and store in state(currentWeekGroceries)
@@ -627,7 +627,8 @@ setRecipePicked(day,meal){
 
      if(this.props.match.params.date){
       this.setState({
-        selectedWeek:this.props.match.params.date
+        selectedWeek:this.props.match.params.date,
+        userId:nextProps.userId
       })
      }
       console.log("mounting")
@@ -637,9 +638,11 @@ setRecipePicked(day,meal){
     }
 
    componentDidMount(){
+    this.setState({userId:nextProps.userId})
     if(this.props.match.params.date){
       this.setState({
-        selectedWeek:this.props.match.params.date
+        selectedWeek:this.props.match.params.date,
+        userId:nextProps.userId
       })
      }
      console.log("mounted")
