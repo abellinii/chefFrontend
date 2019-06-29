@@ -628,7 +628,7 @@ setRecipePicked(day,meal){
      if(this.props.match.params.date){
       this.setState({
         selectedWeek:this.props.match.params.date,
-        userId:nextProps.userId
+        userId:this.props.userId
       })
      }
       console.log("mounting")
@@ -638,11 +638,11 @@ setRecipePicked(day,meal){
     }
 
    componentDidMount(){
-    this.setState({userId:nextProps.userId})
+    this.setState({userId:this.props.userId})
     if(this.props.match.params.date){
       this.setState({
         selectedWeek:this.props.match.params.date,
-        userId:nextProps.userId
+        userId:this.props.userId
       })
      }
      console.log("mounted")
