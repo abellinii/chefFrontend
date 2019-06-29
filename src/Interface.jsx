@@ -361,7 +361,7 @@ componentDidMount(){
     <Grid container>
         <Grid className={classes.club} item xs={12}>
          
-         <ItemAdder />
+         <ItemAdder userId= {this.state.userId}/>
 
         
     </Grid>

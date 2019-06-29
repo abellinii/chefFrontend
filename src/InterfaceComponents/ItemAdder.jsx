@@ -71,6 +71,7 @@ class ItemAdder extends React.Component {
             addSelection:"types",
             condition:null,
             user:{} 
+            userId:null,
           }
 
 
@@ -92,8 +93,8 @@ class ItemAdder extends React.Component {
     }
 
     componentDidMount(){
-      
-    this.getUserInfo("auth0|5ca6bd3bcfaa11040438d4")
+     this.setState({userId:this.props.userId})
+    this.getUserInfo(this.state.userId)
     this.getFoodDataFromDb()
    
 
@@ -101,6 +102,12 @@ class ItemAdder extends React.Component {
     }
 
 
+componentWillReceiveProps(nextProps){
+  this.setState({userId:nextProps.userId})
+
+  this.getUserInfo(nextProps.userId)
+
+}
 
 
 
@@ -135,7 +142,7 @@ class ItemAdder extends React.Component {
 
     getUserInfo(user){
 
-     fetch(ENDPOINT + "/api/getUserInfo/" + user)
+     fetch(ENDPOINT + "/api/getUserinfo/" + user)
           .then(data => data.json())
           .then(res => this.setState({ user:res.data}))
           .then(this.checkOptions(this.state.Type));

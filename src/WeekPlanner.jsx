@@ -621,8 +621,7 @@ setRecipePicked(day,meal){
  
 
     componentWillMount(){
-      this.getFoodDataFromDb();
-     this.getWeekMeal(this.state.selectedWeek);
+    
     
 
      if(this.props.match.params.date){
@@ -632,6 +631,12 @@ setRecipePicked(day,meal){
      }
       
     }
+
+   componentDidMount(){
+      this.getFoodDataFromDb();
+      this.getWeekMeal(this.state.selectedWeek);
+}
+
 
     componentWillReceiveProps(nextProps){
     this.setState({userId:nextProps.userId})
