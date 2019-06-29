@@ -349,7 +349,7 @@ chosenRecipes:{
 
 
     getWeekMeal(date){
-          console.log(date);
+          console.log(ENDPOINT + "/api/getWeekMeal/" + date + "/" + this.state.userId);
           //Check if date is supplied
           if(date === undefined){
           date = "00000000"
@@ -649,6 +649,7 @@ setRecipePicked(day,meal){
 
 
     componentWillReceiveProps(nextProps){
+      console.log("getting new props")
     this.setState({userId:nextProps.userId})
     this.getWeekMeal(this.state.selectedWeek)
 
