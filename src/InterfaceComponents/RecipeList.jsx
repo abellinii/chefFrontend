@@ -126,6 +126,7 @@ const { classes } = this.props;
   return (
 
 
+
    <Grid container spacing={8} className={classes.root}>
         <Grid item xs={12} md={12}>
      <Typography className={classes.box} variant="h4" gutterBottom>
@@ -134,10 +135,7 @@ const { classes } = this.props;
    </Grid>
     
     <Grid container spacing={0} className={classes.border}>
-   <Grid  item xs  >
-<Button onClick={this.clickLeft} className={classes.gridButton}><i className="material-icons recipeIcons">
-keyboard_arrow_left
-</i></Button>
+
     </Grid>
      <Grid  item  xs={11}>
       <GridList  className={classes.gridList}  >
@@ -164,14 +162,8 @@ keyboard_arrow_left
       </GridList>
       </Grid>
 
-       <Grid item  xs  >
-  <Button onClick={this.clickRight}className={classes.gridButton}><i className="material-icons  recipeIcons">
-keyboard_arrow_right
-</i>
-
-</Button>
-    </Grid>
-    </Grid>
+ 
+    
 
     </Grid>
    

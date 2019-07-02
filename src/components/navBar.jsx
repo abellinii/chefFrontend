@@ -41,13 +41,13 @@ function NavBar(props) {
       }</li>
         <li><LongMenu /></li>
       </ul>
-
-      <ul id="nav-mobile" className="sidenav">
+     
+       <ul className="right hide-on-med-and-up show-on-medium" id="nav-mobile" >
         
       
-        <li><LongMenu /></li>
-      </ul>
-      <a href= "/" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+         <li><LongMenu /></li>
+       </ul>
+      
     </div>
   </nav>
   </div>

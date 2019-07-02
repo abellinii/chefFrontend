@@ -354,6 +354,7 @@ componentDidMount(){
 
        
       
+      
       <div>
         
 
@@ -361,7 +362,7 @@ componentDidMount(){
     <Grid container>
         <Grid className={classes.club} item xs={12}>
          
-         <ItemAdder userId= {this.state.userId}/>
+         <ItemAdder />
 
         
     </Grid>
@@ -379,7 +380,7 @@ componentDidMount(){
                                  
                                 <Grid container className={classes.cont}   alignContent="space-around" justify="space-evenly">
                                 
-                                        <Grid item xs={5}  >
+                                        <Grid item xs={11} sm={11}  md = {5}>
                                            
                                                
                                                   <SmallNav inc={this.incrementDate} dec={this.decrementDate} week={this.getWeekData} name={this.state.mealName} renderTabs={this.state.weeks} />
@@ -397,7 +398,7 @@ componentDidMount(){
                                          
                                      
 
-                                       <Grid item xs={5} >
+                                       <Grid item xs={11}  sm={11}  md = {5}>
                                            
                                          
                                                 <SmallNav  myClass='groceryListNav' name={this.state.groceryName} renderTabs={this.state.foodTypes} />
@@ -431,6 +432,8 @@ componentDidMount(){
           </Grid>
 
       </div> 
+       
+
        
    
     );
