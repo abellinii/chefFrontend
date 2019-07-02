@@ -13,7 +13,7 @@ import Review from './components/Review';
 import axios from "axios";
 import { withRouter } from 'react-router-dom';
 import compose from 'recompose/compose';
-
+var ENDPOINT= 'https://api.chefistant.com'
 
 
 
@@ -165,10 +165,10 @@ class Checkout extends React.Component {
 
    
      //Send user to Db
-     axios.put("http://localhost:3001/api/putUserData/", {
+     axios.put(ENDPOINT + "/api/putUserData/", {
        user})
         .then(res => {if(res.data.success){
-          window.location.href = 'http://localhost:3000'
+          window.location.href = 'http://www.chefistant.com'
         }})
 
 
@@ -178,7 +178,7 @@ class Checkout extends React.Component {
     //Get all food data and populate before page is loaded
      getFoodDataFromDb(){
       
-          fetch("http://localhost:3001/api/getData")
+          fetch(ENDPOINT + "/api/getData")
             .then(data => data.json())
             .then(res =>{
               
