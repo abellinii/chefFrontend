@@ -5,6 +5,7 @@ import auth0Client from '../Auth';
 import { withRouter} from 'react-router-dom';
 import compose from 'recompose/compose'
 import Button from '@material-ui/core/Button';
+import pan from '../img/pan.png'
 
 
 
@@ -26,7 +27,9 @@ function NavBar(props) {
       <div className="navbar-fixed ">
         <nav className="amber lighten-4" role="navigation">
     <div className=" ">
-      <a id="logo-container" href="/" className=" brand-logo black-text ">Chefistant</a>
+    
+     
+      <a id="logo-container" href="/" className=" brand-logo black-text padd"> <img src={pan} alt="pan" height='30'></img> Chefistant</a>
       <ul className="right hide-on-med-and-down">
           <li>   {
         !auth0Client.isAuthenticated() &&
