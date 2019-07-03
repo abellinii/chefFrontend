@@ -1,5 +1,10 @@
 
 import React, { Component } from 'react';
+import saveOnFoods from '../img/saveOnFoods.png'
+import thriftyFoods from '../img/thriftyFoods.jpg'
+import choicesFoods from '../img/choicesFoods.png'
+import spoontacular from '../img/spoontacular.png'
+
 
 
 
@@ -26,19 +31,17 @@ render(){
         <div className="col l3 s12">
           <h5 className="black-text">Recipes from</h5>
           <ul>
-            <li><a className="black-text" href="#!">Link 1</a></li>
-            <li><a className="black-text" href="#!">Link 2</a></li>
-            <li><a className="black-text" href="#!">Link 3</a></li>
-            <li><a className="black-text" href="#!">Link 4</a></li>
+            <li><a className="black-text" href="#!"><img src={spoontacular} alt="spoontacular" width= '45%'></img></a></li>
+            
           </ul>
         </div>
         <div className="col l3 s12">
           <h5 className="black-text">Stores</h5>
           <ul>
-            <li><a className="black-text" href="#!">Link 1</a></li>
-            <li><a className="black-text" href="#!">Link 2</a></li>
-            <li><a className="black-text" href="#!">Link 3</a></li>
-            <li><a className="black-text" href="#!">Link 4</a></li>
+            <li><a className="black-text" href="#!"><img src={choicesFoods} alt="choicesFoods" width= '45%'></img></a></li>
+            <li><a className="black-text" href="#!"><img src={thriftyFoods} alt="thriftyFoods" width= '45%'></img></a></li>
+            <li><a className="black-text" href="#!"> <img src={saveOnFoods} alt="saveonFoods" width= '45%'></img></a></li>
+            
           </ul>
         </div>
       </div>
@@ -54,5 +57,6 @@ render(){
   )
 }
 }
+
 
 
