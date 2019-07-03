@@ -15,7 +15,6 @@ import Grid from '@material-ui/core/Grid';
 const styles = theme => ({
   root: {
     width: '100%',
-    backgroundColor:'#51728B' 
   },
   heading: {
     fontSize: '3rem',
@@ -168,7 +167,7 @@ componentWillReceiveProps(nextProps){
                                                       <Grid container spacing={24}>
                                                       <Grid item xs={2}>
                                                                               
-                                                      <img src={this['state']['week'][weekday][meal]['picture'].substring(0,5) === "https" ? this['state']['week'][weekday][meal]['picture'] : require("../img/" + this['state']['week'][weekday][meal]['picture'])} alt="meal img"  height='100%'/>
+                                                      <img src={this['state']['week'][weekday][meal]['picture'].substring(0,5) === "https" ? this['state']['week'][weekday][meal]['picture'] : require("../img/" + this['state']['week'][weekday][meal]['picture'])} alt="meal img"  width='100%'/>
                                                       </Grid>
                                                       <Grid item xs={10}>
                                                       {this['state']["week"][weekday][meal]['title']}
