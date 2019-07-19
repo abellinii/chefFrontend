@@ -120,10 +120,11 @@ componentWillReceiveProps(nextProps){
     getFoodDataFromDb = () =>  {
         fetch(ENDPOINT + "/api/getData")
           .then(data => data.json())
-          .then(res => this.setState({ options: res.data[0].options,
+          .then((res) => {this.setState({ options: res.data[0].options,
                                        cuisines: res.data[0].cuisines, 
                                        flavors: res.data[0].flavors,
-                                       types: res.data[0].types}));
+                                       types: res.data[0].types}))
+          console.log(res.data)};
       }
 
 
@@ -145,7 +146,7 @@ componentWillReceiveProps(nextProps){
      fetch(ENDPOINT + "/api/getUserinfo/" + user)
           .then(data => data.json())
           .then(res => this.setState({ user:res.data}))
-          .then(this.checkOptions(this.state.Type));
+          .then(if(this.state.Type){this.checkOptions(this.state.Type)});
     }
 
 
