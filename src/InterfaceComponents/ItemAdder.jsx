@@ -124,8 +124,8 @@ componentWillReceiveProps(nextProps){
                                        cuisines: res.data[0].cuisines, 
                                        flavors: res.data[0].flavors,
                                        types: res.data[0].types})
-          console.log(res.data)};
-      })
+          console.log(res.data)})
+      }
 
 
     addFoodItemToDb(ID, food, selection){
