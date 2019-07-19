@@ -146,7 +146,7 @@ componentWillReceiveProps(nextProps){
      fetch(ENDPOINT + "/api/getUserinfo/" + user)
           .then(data => data.json())
           .then(res => this.setState({ user:res.data}))
-          .then(if(this.state.Type){this.checkOptions(this.state.Type)});
+          .then(()=>{if(this.state.Type){this.checkOptions(this.state.Type)}});
     }
 
 
