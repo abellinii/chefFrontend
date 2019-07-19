@@ -123,9 +123,9 @@ componentWillReceiveProps(nextProps){
           .then((res) => {this.setState({ options: res.data[0].options,
                                        cuisines: res.data[0].cuisines, 
                                        flavors: res.data[0].flavors,
-                                       types: res.data[0].types}))
+                                       types: res.data[0].types})
           console.log(res.data)};
-      }
+      })
 
 
     addFoodItemToDb(ID, food, selection){
