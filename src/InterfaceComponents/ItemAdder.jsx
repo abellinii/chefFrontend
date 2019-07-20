@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import axios from "axios";
-var ENDPOINT= process.env.URL_ENDPOINT;
+var ENDPOINT= 'https://api.chefistant.com';
 
 
 
@@ -118,14 +118,14 @@ componentWillReceiveProps(nextProps){
   //-------------------------------Database calls------------------------------------------------------
 
     getFoodDataFromDb = () =>  {
-      console.log("logging");
+      
         fetch(ENDPOINT + "/api/getData")
           .then(data => data.json())
           .then((res) => {this.setState({ options: res.data[0].options,
                                        cuisines: res.data[0].cuisines, 
                                        flavors: res.data[0].flavors,
                                        types: res.data[0].types})
-          console.log(res.data)})
+          })
       }
 
 
