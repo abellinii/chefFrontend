@@ -808,6 +808,7 @@ setRecipePicked(day,meal){
                                         key={data.key}
                                         label={data.label}
                                         onDelete={this.handleDelete("food",data)}
+                                        onClick={this.handleDelete("food",data)}
                                         className={classes.chip}
                                       />)
 
@@ -879,6 +880,7 @@ setRecipePicked(day,meal){
                                         key={data.key}
                                         label={data.label}
                                         onDelete={this.handleDelete("cuisine",data)}
+                                        onClick={this.handleDelete("cuisine",data)}
                                         className={classes.chip}
                                       />)
 
