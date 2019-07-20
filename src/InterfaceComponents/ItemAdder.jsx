@@ -147,7 +147,7 @@ componentWillReceiveProps(nextProps){
      fetch(ENDPOINT + "/api/getUserinfo/" + user)
           .then(data => data.json())
           .then(res => this.setState({ user:res.data}))
-          .then(()=>{if(this.state.Type){this.checkOptions(this.state.Type)}});
+          .then(this.checkOptions(this.state.Type));
     }
 
 
@@ -238,7 +238,7 @@ componentWillReceiveProps(nextProps){
 
 
    checkOptions = (input) =>{
-    
+    console.log("input : " + input)
 
      if(input === "Cuisines likes" ){
     
@@ -283,16 +283,18 @@ componentWillReceiveProps(nextProps){
 
 
   handleChange = event => {
-    console.log(event)
+    console.log("handleChange" + event.target.value)
     this.setState({ [event.target.name]: event.target.value });
     this.checkOptions(event.target.value );
+
+
   };
 
 
 
 
   handleChangeText = event => {
-    
+     console.log("handleChangeText" + event.target.value)
     this.setState({ Item: event.target.value });
    
   };
