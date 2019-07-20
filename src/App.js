@@ -3,7 +3,6 @@ import React from "react";
 import NavBar from './components/navBar';
 import Footer from './components/Footer';
 import Home from './Home';
-import Login from './Login';
 import Checkout from './Checkout';
 import Interface from './Interface';
 import WeekPlanner from './WeekPlanner';
@@ -20,29 +19,30 @@ var ENDPOINT= 'https://api.chefistant.com'
 
 
 
-console.log(ENDPOINT);
+
 class App extends React.Component{
   // initialize our state 
 
 
    constructor(props){
     super(props);
-  this.state = {
-    userSignedIn:auth0Client.isAuthenticated() ,
-    data: [],
-    food:null,
-    id: 0,
-    message: null,
-    intervalIsSet: false,
-    idToDelete: null,
-    idToUpdate: null,
-    objectToUpdate: null,
-    userId:null,
-    newUser:null
-  };
-this.getUserInfo =this.getUserInfo.bind(this)
-this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
-}
+    this.state = {
+      userSignedIn:auth0Client.isAuthenticated() ,
+      data: [],
+      food:null,
+      id: 0,
+      message: null,
+      intervalIsSet: false,
+      idToDelete: null,
+      idToUpdate: null,
+      objectToUpdate: null,
+      userId:null,
+      newUser:null
+    };
+
+  this.getUserInfo =this.getUserInfo.bind(this)
+  this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
+  }
 
 
 //When data mounts if session is still in use silently authenticate
@@ -62,8 +62,8 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
       this.setState({
         userId:result
       })
-      console.log(result);
-     this.getUserInfo(this.state.userId)
+
+      this.getUserInfo(this.state.userId)
     
     } catch (err) {
       result = auth0Client.getID() ;
@@ -81,6 +81,8 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
 
 
 
+
+
   getFoodDataFromDb = () =>  {
     fetch(ENDPOINT + "/api/getData")
       .then(data => data.json())
@@ -90,6 +92,9 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
         });
 
   };
+
+
+
 
 
 
@@ -141,6 +146,10 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
   };
 
 
+
+
+
+
   // our update method that uses our backend api
   // to overwrite existing data base information
   updateUser = (idToUpdate, updateToApply) => {
@@ -161,9 +170,10 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
 
 
 
-  // here is our UI
-  // it is easy to understand their functions when you 
-  // see them render into our screen
+ //Routes
+        //   "/"  Verify if the account is new and render the signup sheet if it's user's first login, otherwise render ghme page
+        //   "/interface"  shows the weeks grocerylist and mealplan from a chosen week. User can also update dietary information
+        //   "/planyourweek" shows the week planning page with an optional date parameter to specify the week requested
 
   render() {
   
@@ -182,9 +192,7 @@ this.getFoodDataFromDb = this.getFoodDataFromDb.bind(this)
                           </div>
                               
                        <main>  
-                         <Route exact path="/" 
-                           render={({ match }) => { return  this.state.newUser   ?  <Checkout id={this.state.userId}/> :  <Home/>}}/> 
-                         <Route path="/login" component={Login} />
+                         <Route exact path="/" render={({ match }) => { return  this.state.newUser   ?  <Checkout id={this.state.userId}/> :  <Home/>}}/> 
                          <Route path="/interface" render={(props)=> <Interface userId={this.state.userId} {...props} />} />
                          <Route path="/planyourweek:date?/" render={(props)=>  <WeekPlanner userId={this.state.userId} {...props} /> } />
                          <Route exact path='/callback' component={Callback}/>

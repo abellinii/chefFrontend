@@ -1,5 +1,3 @@
-
- 
 import React, { Component } from 'react';
 import bottom from './img/bottom.jpg';
 import chef from './img/chef.jpg';
@@ -72,7 +70,7 @@ render(){
             <h2 className="center brown-text"><i className="material-icons">hearing</i></h2>
             <h5 className="center">Voice assistant</h5>
 
-            <p className="light">You own voice assisted personal chef to help prepare your meal plan with <a href="https://developer.amazon.com/alexa"> Amazon Alexa</a></p>
+            <p className="light center-align">You own voice assisted personal chef to help prepare your meal plan with <a href="https://developer.amazon.com/alexa" style={{color:'black',fontWeight:'bold'}}> Amazon Alexa</a></p>
           </div>
         </div>
 
@@ -81,7 +79,7 @@ render(){
             <h2 className="center brown-text"><i className="material-icons">local_dining</i></h2>
             <h5 className="center">Meal planning</h5>
 
-            <p className="light">Plan all your meals ahead of time suited to your tastes and dietary concerns </p>
+            <p className="light center-align">Plan all your meals ahead of time suited to your tastes and dietary concerns </p>
           </div>
         </div>
 
@@ -90,7 +88,7 @@ render(){
             <h2 className="center brown-text"><i className="material-icons">mode_edit</i></h2>
             <h5 className="center">Grocery list</h5>
 
-            <p className="light">Have it all prepared to a grocery list to make your shopping experience more convienient</p>
+            <p className="light center-align">Have it all prepared to a grocery list to make your shopping experience more convienient</p>
           </div>
         </div>
       </div>
@@ -117,7 +115,7 @@ render(){
         <div className="col s12 center">
           <h3><i className="mdi-content-send brown-text"></i></h3>
           <h4>Contact Us</h4>
-          <p className="left-align light">We are always trying to improve the user experience and make our service the best it can be. We are always open to suggestions. Let us know what you like, What you dont like and What features you would like to have. We want to have a world class chef in our home as well!</p>
+          <p className="left-align light">Chefistant is always trying to improve the way a user experiences their connection to technology and food. As we grow as an essential piece of how you enjoy your time in the kitchen we know only you know what could mak it a better experience, so we are always wanting to hear hear your suggestions. Let Chefistant know what you like, What you dont like and What features you would like to have. We want to have a world class chef in our home as well!</p>
         </div>
       </div>
 
@@ -133,7 +131,7 @@ render(){
         </div>
       </div>
     </div>
-    <div className="parallax"><img src={bottom}alt="Unsplashed background img 3"></img></div>
+    <div className="parallax"><img src={bottom} alt="Unsplashed background img 3"></img></div>
   </div>
 
 </div>
