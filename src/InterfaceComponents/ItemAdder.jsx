@@ -88,7 +88,7 @@ class ItemAdder extends React.Component {
   
 
     componentWillMount(){
-       
+       this.getFoodDataFromDb();
 
     }
 
@@ -118,6 +118,7 @@ componentWillReceiveProps(nextProps){
   //-------------------------------Database calls------------------------------------------------------
 
     getFoodDataFromDb = () =>  {
+      console.log("logging");
         fetch(ENDPOINT + "/api/getData")
           .then(data => data.json())
           .then((res) => {this.setState({ options: res.data[0].options,
